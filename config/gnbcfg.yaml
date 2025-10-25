@@ -11,7 +11,7 @@ gtpIp: gnb.n3.org # gNB's local IP address for N3 Interface (Usually same with l
 
 # List of AMF address information
 amfConfigs:
-  - address: TODO
+  - address: amf.n2.org
     port: 38412
 
 # List of supported S-NSSAIs by this gNB
