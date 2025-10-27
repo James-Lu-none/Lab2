@@ -10,9 +10,9 @@ services:
     devices:
       - "/dev/net/tun"
     networks:
-      n2net:
+      uunet:
         aliases:
-          - ue.n2.org
+          - ue.uu.org
     depends_on:
       - ueransim
   free5gc-upf:
@@ -281,6 +281,9 @@ services:
     devices:
       - "/dev/net/tun"
     networks:
+      uunet:
+        aliases:
+          - gnb.uu.org
       n2net:
         aliases:
           - gnb.n2.org
@@ -300,6 +303,14 @@ networks:
     driver_opts:
       com.docker.network.bridge.name: br-sbi
 
+  uunet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.100.0.0/24
+    driver_opts:
+      com.docker.network.bridge.name: br-uu
+      
   n2net:
     ipam:
       driver: default
